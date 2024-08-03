@@ -16,7 +16,7 @@ app.use("/api/jobs", jobRoute);
 // 	console.log("Server is running on port 5001 and thankszz!!!");
 // });
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT;
 
 app.listen(port, () => {
 	console.log(`Server is running at http://localhost:${port} Enjoy coding!`);
@@ -24,15 +24,11 @@ app.listen(port, () => {
 
 // Get backend api homepage (initial url testing)
 app.get("/", (req, res) => {
-	res.send(
-		"Hello from Node Backend API, AlhamdulilLah"
-	);
+	res.send("Hello from Node Backend API, AlhamdulilLah");
 });
 
 mongoose
-	.connect(
-		"mongodb+srv://zakariadamu714:pc3bQHH0okMD0a4j@cluster0.yxnuqu4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-	)
+	.connect(process.env.MONGODB_URI)
 	.then(() => {
 		console.log("Connected to Database!!");
 	})
