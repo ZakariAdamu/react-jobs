@@ -1,1 +1,1 @@
-This is a fullstack MERN application on React job listing. All CRUD functionalities tested and working fine.
+This is a fullstack MERN application on React job listing. Leveraging REST API with NodeJS and ExpressJS to allow a smooth communication to my MongoDB database implementing all the CRUD functionalities.
