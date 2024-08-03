@@ -9,7 +9,7 @@ const JobListings = ({ isHome = false }) => {
 
 	useEffect(() => {
 		const fetchJobs = async () => {
-			const apiUrl = "/api/api/jobs";
+			const apiUrl = "/api/jobs";
 			try {
 				const res = await fetch(apiUrl);
 				const data = await res.json();
