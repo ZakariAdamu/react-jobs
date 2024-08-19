@@ -1,35 +1,40 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const helmet = require("helmet"); // Security middleware to set HTTP headers
 
 const jobRoute = require("./routes/job.route");
+
 const app = express();
 
+// Middleware setup
+app.use(helmet()); // Adds security-related HTTP headers
 app.use(express.json());
+app.use(express.urlencoded({ extended: false })); // Allows parsing of URL-encoded data
 
-// middleware configuration to allow for entering data in other formats (eg. form encoded format) aside the JSON format
-app.use(express.urlencoded({ extended: false }));
-
-// routes
+// Routes setup
 app.use("/api/jobs", jobRoute);
 
-// app.listen(5001, () => {
-// 	console.log("Server is running on port 5001 and thankszz!!!");
-// });
+// Home route for initial testing
+app.get("/", (req, res) => {
+	res.send("Hello from Node Backend API, AlhamdulilLah x3");
+});
 
-const port = process.env.PORT;
+// Database connection
+mongoose
+	.connect(process.env.MONGODB_URI, {
+		useNewUrlParser: true,
+	})
+	.then(() => {
+		console.log("Connected to Database!");
+	})
+	.catch((error) => {
+		console.error("Database connection failed:", error);
+		process.exit(1); // Exit the process with failure code
+	});
 
+// Server setup
+const port = process.env.PORT || 4004;
 app.listen(port, () => {
 	console.log(`Server is running at http://localhost:${port} Enjoy coding!`);
 });
-
-// Get backend api homepage (initial url testing)
-app.get("/", (req, res) => {
-	res.send("Hello from Node Backend API, AlhamdulilLah");
-});
-
-mongoose
-	.connect(process.env.MONGODB_URI)
-	.then(() => {
-		console.log("Connected to Database!!");
-	})
-	.catch(() => console.log("Connection failed!"));
