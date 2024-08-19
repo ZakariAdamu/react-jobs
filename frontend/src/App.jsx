@@ -16,7 +16,7 @@ import EditJobPage from "./pages/EditJobPage";
 const App = () => {
 	// Add new job (send a post request to the server)
 	const addJob = async (newJob) => {
-		const res = await fetch("/jobs", {
+		const res = await fetch(`${import.meta.env.VITE_API_URL}/jobs`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
