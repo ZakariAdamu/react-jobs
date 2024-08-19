@@ -41,7 +41,7 @@ function JobListing({ job }) {
 						{job.location}
 					</div>
 					<Link
-						to={`/jobs/${job._id}`}
+						to={`${import.meta.env.VITE_API_URL}/jobs/${job._id}`}
 						className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
 					>
 						Read More
