@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import JobListing from "./JobListing";
 import Spinner from "./Spinner";
 
 const JobListings = ({ isHome = false }) => {
 	const [jobs, setJobs] = useState([]);
 	const [loading, setLoading] = useState(true);
-	let slicedData;
+
+	const fetchJobs = useCallback(async () => {
+		try {
+			const response = await fetch(`${import.meta.env.VITE_API_URL}/jobs`);
+			const data = await response.json();
+
+			const sliceLimit = isHome ? 3 : 1000;
+			setJobs(data.slice(0, sliceLimit));
+		} catch (error) {
+			console.error("Error fetching data!", error);
+		} finally {
+			setLoading(false);
+		}
+	}, []);
 
 	useEffect(() => {
-		const fetchJobs = async () => {
-			const apiUrl = "/api/jobs";
-			try {
-				const res = await fetch(apiUrl);
-				const data = await res.json();
-				isHome
-					? (slicedData = data.slice(0, 3))
-					: (slicedData = data.slice(0, 100));
-				setJobs(slicedData);
-			} catch (error) {
-				console.log("Error fetching data!", error);
-			} finally {
-				setLoading(false);
-			}
-		};
 		fetchJobs();
 	}, []);
 

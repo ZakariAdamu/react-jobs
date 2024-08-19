@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const helmet = require("helmet"); // Security middleware to set HTTP headers
 
@@ -8,6 +9,7 @@ const jobRoute = require("./routes/job.route");
 const app = express();
 
 // Middleware setup
+app.use(cors()); // Basic CORS setup - allow all origins
 app.use(helmet()); // Adds security-related HTTP headers
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // Allows parsing of URL-encoded data
@@ -34,7 +36,7 @@ mongoose
 	});
 
 // Server setup
-const port = process.env.PORT || 4004;
+const port = process.env.PORT;
 app.listen(port, () => {
 	console.log(`Server is running at http://localhost:${port} Enjoy coding!`);
 });
