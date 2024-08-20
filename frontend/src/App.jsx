@@ -29,7 +29,7 @@ const App = () => {
 	// Delete job (send a delete request to the server)
 
 	const deleteJob = async (id) => {
-		const res = await fetch(`/api/jobs/${id}`, {
+		const res = await fetch(`${import.meta.env.VITE_API_URL}/jobs/${id}`, {
 			method: "DELETE",
 		});
 		return;
@@ -38,7 +38,7 @@ const App = () => {
 	// Update Job
 
 	const updateJob = async (job) => {
-		const res = await fetch(`/api/jobs/${job.id}`, {
+		const res = await fetch(`${import.meta.env.VITE_API_URL}/jobs/${job.id}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
