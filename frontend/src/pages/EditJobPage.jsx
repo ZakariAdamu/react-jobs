@@ -122,17 +122,17 @@ const EditJobPage = ({ updateJobSubmit }) => {
 								value={salary}
 								onChange={(e) => setSalary(e.target.value)}
 							>
-								<option value="Under $50K">Under $50K</option>
-								<option value="$50K - $60K">$50K - $60K</option>
-								<option value="$60K - $70K">$60K - $70K</option>
-								<option value="$70K - $80K">$70K - $80K</option>
-								<option value="$80K - $90K">$80K - $90K</option>
-								<option value="$90K - $100K">$90K - $100K</option>
-								<option value="N100K - N150K">N100K - N150K</option>
-								<option value="N150K - N200K">N150K - N200K</option>
-								<option value="N200K - N250K">N200K - N250K</option>
-								<option value="N250K - N300K">N250K - N300K</option>
-								<option value="Over N300K">Over N300K</option>
+								<option value="Under $50K">Under $50K / Annum</option>
+								<option value="$50K - $60K">$50K - $60K / Annum</option>
+								<option value="$60K - $70K">$60K - $70K / Annum</option>
+								<option value="$70K - $80K">$70K - $80K / Annum</option>
+								<option value="$80K - $90K">$80K - $90K / Annum</option>
+								<option value="$90K - $100K">$90K - $100K / Annum</option>
+								<option value="N100K - N150K">N100K - N150K / Month</option>
+								<option value="N150K - N200K">N150K - N200K / Month</option>
+								<option value="N200K - N250K">N200K - N250K / Month</option>
+								<option value="N250K - N300K">N250K - N300K / Month</option>
+								<option value="Over N300K">Over N300K / Month</option>
 							</select>
 						</div>
 
