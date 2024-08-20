@@ -16,7 +16,7 @@ import EditJobPage from "./pages/EditJobPage";
 const App = () => {
 	// Add new job (send a post request to the server)
 	const addJob = async (newJob) => {
-		const res = await fetch(`${import.meta.env.VITE_API_URL}/jobs`, {
+		const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -40,7 +40,7 @@ const App = () => {
 	// Delete job (send a delete request to the server)
 
 	const deleteJob = async (id) => {
-		const res = await fetch(`${import.meta.env.VITE_API_URL}/jobs/${id}`, {
+		const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/${id}`, {
 			method: "DELETE",
 		});
 		return;
@@ -49,13 +49,16 @@ const App = () => {
 	// Update Job
 
 	const updateJob = async (job) => {
-		const res = await fetch(`${import.meta.env.VITE_API_URL}/jobs/${job.id}`, {
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(job),
-		});
+		const res = await fetch(
+			`${import.meta.env.VITE_API_URL}/api/jobs/${job.id}`,
+			{
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(job),
+			}
+		);
 		return;
 	};
 
