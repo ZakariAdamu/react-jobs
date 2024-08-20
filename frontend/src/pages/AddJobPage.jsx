@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const AddJobPage = ({ addJobSubmit }) => {
-	bb;
 	const [title, setTitle] = useState("");
 	const [type, setType] = useState("Full-Time");
 	const [location, setLocation] = useState("");
