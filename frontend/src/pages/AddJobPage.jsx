@@ -118,7 +118,7 @@ const AddJobPage = ({ addJobSubmit }) => {
 								<option value="$50K - $60K">$50K - $60K</option>
 								<option value="$60K - $70K">$60K - $70K</option>
 								<option value="$70K - $80K">$70K - $80K</option>
-								<option value="$80K - $90K">N80K - $90K</option>
+								<option value="$80K - $90K">$80K - $90K</option>
 								<option value="$90K - $100K">$90K - $100K</option>
 								<option value="N100K - N150K">N100K - N150K</option>
 								<option value="N150K - N200K">N150K - N200K</option>
