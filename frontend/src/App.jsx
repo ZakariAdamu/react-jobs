@@ -25,6 +25,17 @@ const App = () => {
 		});
 		return;
 	};
+	// Read/view a particular job by it's id (send a GET request to the server by a unique id)
+	// const addJob = async (newJob) => {
+	// 	const res = await fetch(`${import.meta.env.VITE_API_URL}/jobs`, {
+	// 		method: "POST",
+	// 		headers: {
+	// 			"Content-Type": "application/json",
+	// 		},
+	// 		body: JSON.stringify(newJob),
+	// 	});
+	// 	return;
+	// };
 
 	// Delete job (send a delete request to the server)
 
@@ -60,7 +71,7 @@ const App = () => {
 					loader={jobLoader}
 				/>
 				<Route
-					path="api/jobs/:id"
+					path="/jobs/:id"
 					element={<JobPage deleteJob={deleteJob} />}
 					loader={jobLoader}
 				/>

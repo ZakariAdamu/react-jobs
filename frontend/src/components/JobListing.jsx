@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FaMapMarker } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function JobListing({ job }) {
 	const [showFullDescription, setShowFullDescription] = useState(false);
-	// const { id } = useParams();
+	const { id } = useParams();
 
 	let description = job.description;
 
@@ -41,7 +41,7 @@ function JobListing({ job }) {
 						{job.location}
 					</div>
 					<Link
-						to={`${import.meta.env.VITE_API_URL}/jobs/${job._id}`}
+						to={`/jobs/${job._id}`}
 						className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
 					>
 						Read More

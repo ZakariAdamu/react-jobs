@@ -107,9 +107,11 @@ const JobPage = ({ deleteJob }) => {
 };
 
 const jobLoader = async ({ params }) => {
-	const res = await fetch(`/api/jobs/${params.id}`);
+	const res = await fetch(`${import.meta.env.VITE_API_URL}/jobs/${params.id}`);
 	const data = await res.json();
 	return data;
 };
 
 export { JobPage as default, jobLoader };
+
+// the jobLoader functions let's us load a particular job by it's id
