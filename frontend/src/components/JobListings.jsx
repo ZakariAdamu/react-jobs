@@ -8,7 +8,7 @@ const JobListings = ({ isHome = false }) => {
 
 	const fetchJobs = useCallback(async () => {
 		try {
-			const response = await fetch(`${import.meta.env.VITE_API_URL}/jobs`);
+			const response = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs`);
 			const data = await response.json();
 
 			const sliceLimit = isHome ? 3 : 1000;
