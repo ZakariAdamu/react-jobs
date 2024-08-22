@@ -31,7 +31,7 @@ function JobListing({ job }) {
 					{showFullDescription ? "Less" : "More"}
 				</button>
 
-				<h3 className="text-indigo-500 mb-2">{job.salary} / Year</h3>
+				<h3 className="text-indigo-500 mb-2">{job.salary} / Month</h3>
 
 				<div className="border border-gray-100 mb-5"></div>
 
