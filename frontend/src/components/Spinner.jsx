@@ -13,7 +13,7 @@ const override = {
 const Spinner = ({ loading }) => {
 	return (
 		<PropagateLoader
-			color="##363638"
+			color="#363638"
 			loading={loading}
 			cssOverride={override}
 			size={20}
