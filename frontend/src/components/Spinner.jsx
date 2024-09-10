@@ -5,15 +5,15 @@ import PropagateLoader from "react-spinners/PropagateLoader";
 
 const override = {
 	display: "flex",
-	alignItems: 'center',
-	justifyContent: 'center',
+	alignItems: "center",
+	justifyContent: "center",
 	margin: "100px auto",
 };
 
 const Spinner = ({ loading }) => {
 	return (
 		<PropagateLoader
-			color="#4338ca"
+			color="##363638"
 			loading={loading}
 			cssOverride={override}
 			size={20}
